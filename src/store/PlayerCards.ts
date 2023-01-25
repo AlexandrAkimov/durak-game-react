@@ -2,8 +2,8 @@ import { makeObservable } from "mobx"
 import { Card } from "../types"
 import Game from "./Game"
 
-class PlayerCards {
-  cards: Array<Card> = []
+abstract class PlayerCards {
+  abstract cards: Array<Card>
 
 
   reduceCard(id: number): void {
