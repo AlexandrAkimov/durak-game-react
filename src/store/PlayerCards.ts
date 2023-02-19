@@ -13,6 +13,10 @@ abstract class PlayerCards {
   addCards(cards: Array<Card>): void {
     this.cards = [...this.cards, ...cards]
   }
+
+  clearCards(): void {
+    this.cards = []
+  }
 }
 
 export default PlayerCards

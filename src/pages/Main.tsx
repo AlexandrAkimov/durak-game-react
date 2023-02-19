@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { useEffect } from 'react';
 import BattleFieldComponent from '../components/BattleFieldComponent';
 import DeckComponent from '../components/DeckComponent';
+import GameOver from '../components/GameOver';
 import HisCardsComponents from '../components/HisCardsComponent';
 import MyActions from '../components/MyActions';
 import MyCardsComponents from '../components/MyCardsComponent';
@@ -59,6 +60,11 @@ const Main: React.FC = observer(() => {
         isMyAttack={game.isMyAttack}
         onRepulsed={() => battleField.clearBattleField(myCards, hisCards)}
         onGetCard={getCard}
+      />
+      <GameOver
+        isShow={!game.deckCards.length && (!myCards.cards.length || !hisCards.cards.length)}
+        isMyWin={!myCards.cards.length}
+        onRestartGame={startGame}
       />
     </>
   );

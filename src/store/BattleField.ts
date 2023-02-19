@@ -36,7 +36,6 @@ class BattleField {
     } else {
       game.setIsGetCard(false)
     }
-
   }
 }
 
